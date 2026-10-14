@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ayush Yadav — Portfolio
 
-## Getting Started
+A complete editorial portfolio for a software engineer working across AI and full-stack development. Warm ivory, charcoal, sage, and burnt orange pair with oversized typography, a mathematical orbital illustration, and custom project interface studies.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Node.js 20.9+ is required by Next.js.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build       # Production build
+npm start           # Serve the production build
+npm run lint        # ESLint
+npm run typecheck   # TypeScript
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content and design
 
-## Learn More
+- `app/page.tsx`: page composition and introductory, experience, about, and contact copy.
+- `app/globals.css`: responsive design, typography, previews, and animation.
+- `data/site.ts`: identity, contact details, social links, resume path, and canonical domain.
+- `data/portfolio.ts`: selected project descriptions, actual source/demo URLs, expandable engineering stories, and toolkit categories.
+- `data/experience.ts` and `data/achievements.ts`: resume-aligned experience and coding records.
+- `components/portfolio/`: orbital artwork, project previews, email-copy interaction, and brand icons.
+- `components/navigation/Navbar.tsx`: active-section navigation and responsive mobile menu.
+- `app/layout.tsx`, `app/icon.tsx`, and `lib/og.tsx`: fonts, metadata, structured data, favicon, and social previews.
 
-To learn more about Next.js, take a look at the following resources:
+The displayed projects are CodeSense, Sentinel, and the Real-Time Chat Application. Content and links are based on the supplied `ayushv24 (1).pdf`; the same PDF is available at `public/Ayush-Yadav-Resume.pdf`. Coding achievements reflect the resume rather than live platform data. Other project components and data from the earlier portfolio remain in the workspace for reuse but are not mounted on the redesigned page.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project previews are custom illustrations, not screenshots or live AI services. CodeSense offers switchable sample review/evaluation views; each project has a native expandable “Behind the build” section. The hero uses a generated SVG wireframe with a pause control. Contact provides email, clipboard copy with success/error feedback, social links, and resume downloads.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Accessibility
 
-## Deploy on Vercel
+Semantic sections and headings, a skip link, visible keyboard focus, keyboard-accessible controls and disclosures, Escape-to-close mobile navigation, active navigation states, reduced-motion support, and static server-rendered content. Contact does not depend on a backend or an unconfigured form.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The portfolio uses Next.js 16.3 with the App Router, React 19, TypeScript, Tailwind CSS 4, and Lucide icons. Fonts are optimized and self-hosted with `next/font`.
+
+Set `site.url` in `data/site.ts` to the actual deployment domain before publishing. The existing `https://ayushyadav.dev` value is used for the canonical URL, sitemap, and social metadata; domain ownership has not been verified. Project links come directly from the resume and can be edited independently in `data/portfolio.ts`.
